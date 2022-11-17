@@ -34,12 +34,14 @@ public class TestEuro {
 
     @Test
     void testSottrai() {
-
+        Euro sott = new Euro(5);
+		e.sottrai(sott);
+		assertEquals(1000,e.getValore());
     }
 
     @Test
     void testStampa() {
-
+        assertEquals("15.0 euro",e.stampa());
     }
 
     @Test
