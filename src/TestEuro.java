@@ -24,12 +24,15 @@ public class TestEuro {
 
     @Test
     void testMinoreDi() {
-        
+        Euro t = new Euro(30);
+        assertTrue(e.minoreDi(t));
     }
 
     @Test
     void testSomma() {
-
+        Euro t = new Euro(30);
+        e.somma(t);
+        assertEquals(4500, e.getValore());
     }
 
     @Test
