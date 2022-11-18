@@ -49,6 +49,6 @@ public class TestEuro {
 
     @Test
     void testUgualeA() {
-
+        assertEquals(true,e.ugualeA(new Euro(15)));
     }
 }
