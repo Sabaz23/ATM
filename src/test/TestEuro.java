@@ -1,8 +1,9 @@
 package test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import code.Business_Logic.*;
 public class TestEuro {
@@ -18,14 +19,16 @@ public class TestEuro {
 
     @Test
     void testGetValore() {
+        
         assertEquals(1500,e.getValore());
         
         assertTrue(!(e.getValore()==1000));
     }
 
-    @Test
-    void testMinoreDi() {
-        Euro t = new Euro(30);
+    @ParameterizedTest
+    @ValueSource(ints = {20,50,100,200,500}) //Veri tagli di valuta
+    void testMinoreDi(int numbers) {
+        Euro t = new Euro(numbers);
         assertTrue(e.minoreDi(t));
     }
 
