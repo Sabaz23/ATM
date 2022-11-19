@@ -78,14 +78,14 @@ public class Deposit extends Transaction
       // display the prompt
       screen.displayMessage( "\nPlease enter a deposit amount in " + 
          "CENTS (or 0 to cancel): " );
-      Euro input = new Euro(keypad.getInput()); // receive input of deposit amount
+      int input = keypad.getInput(); // receive input of deposit amount
       
       // check whether the user canceled or entered a valid amount
-      if ( input.getValore() == CANCELED ) 
+      if ( input == CANCELED ) 
          return new Euro(CANCELED);
       else
       {
-         return new Euro(input.getValore()/100); // return dollar amount 
+         return new Euro(input); // return dollar amount 
       } // end else
    } // end method promptForDepositAmount
 } // end class Deposit
