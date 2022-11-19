@@ -45,16 +45,15 @@ public class Account
    // credits an amount to the account
    public void credit( Euro amount )
    {
-      totalBalance = new Euro(totalBalance.getValore()+amount.getValore()); // add to total balance
+      totalBalance.somma(amount);   // add to total balance
    } // end method credit
 
    // debits an amount from the account
    public void debit( Euro amount )
    {
-      availableBalance = new Euro(availableBalance.getValore()-amount.getValore()); // subtract from available balance
-      totalBalance = new Euro(totalBalance.getValore()-amount.getValore()); // subtract from total balance
-   } // end method debit
-
+      availableBalance.sottrai(amount);
+      totalBalance.sottrai(amount);
+   }
    // returns account number
    public int getAccountNumber()
    {
