@@ -36,11 +36,11 @@ public class TestBankDatabase {
 
     @Test
     void testGetAvailableBalance() {
-
+        assertEquals(100000, bankDB.getAvailableBalance(12345).getValore());
     }
 
     @Test
     void testGetTotalBalance() {
-
+        assertEquals(120000, bankDB.getTotalBalance(12345).getValore());
     }
 }
